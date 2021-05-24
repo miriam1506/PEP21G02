@@ -39,3 +39,17 @@ def flatten_list(data:list):
     return fin_list
 result = flatten_list(multi_dimensional_list)
 print(result)
+
+#recursivitate
+def flatten_list(data :list):
+    fin_list = []
+    for i in data:
+        if type(i) == int:
+            fin_list.append(i)
+            continue
+        print(i)
+        fin_list.extend(flatten_list(i))
+    return fin_list
+
+result=flatten_list(multi_dimensional_list)
+print(result)
