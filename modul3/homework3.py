@@ -16,7 +16,7 @@ input_list = [1, True, '123', False, 6, ()]
 def ordered_ints(list_of_objects: list):
     ints_list = []
     for object in list_of_objects:
-        if type(object) == tuple: #count the lenght if it can't be directly converted to int
+        if type(object) == tuple:
             object_lenght = len(object)
             ints_list.append(object_lenght)
             continue
