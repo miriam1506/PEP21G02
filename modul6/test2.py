@@ -63,6 +63,7 @@ class TimeKeeper:
         self.date = date
 
     def __iter__(self):
+        remove_from_factory =[]
         for name, start in self.ledger.items():
             remove_from_factory.append((name, start))
             return TimeIter(remove_from_factory)
