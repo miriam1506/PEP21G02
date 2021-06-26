@@ -63,14 +63,13 @@ class TimeKeeper:
         self.date = date
 
     def __iter__(self):
-        remove_from_factory = []
-        for name, start, remove_from_factory in self.ledger.items():
+        for name, start in self.ledger.items():
             remove_from_factory.append((name, start))
             return TimeIter(remove_from_factory)
 
     def start_work(self, name: str, start: tuple):
         """add start work time"""
-        if self.ledger.get(name, None):
+        if self.ledger.get(name,None):
             raise WorkStartError(f'{name} already started work')
         self.ledger[name] = [datetime(*self.date, *start)]
 
